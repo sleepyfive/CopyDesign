@@ -140,9 +140,10 @@ const toCamelStyle = function(name:string):string{
 
 // 生成context文件
 const contextJS = `import React, { createContext } from "react";
-export default IconContext = createContext({
+const IconContext = createContext({
     classPrefix: 'copy-design'
 })
+export default IconContext
 `
 writeFileSync(resolve(entryPath,CONTEXT_NAME),contextJS)
 log('😋生成IconContext成功！')
