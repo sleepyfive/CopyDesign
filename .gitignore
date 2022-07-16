@@ -25,3 +25,6 @@ dist-ssr
 
 # package-lock.json
 *-lock.json
+
+src/icons/comp/*
+src/icons/**/*.js
