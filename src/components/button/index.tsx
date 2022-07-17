@@ -1,8 +1,15 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, MouseEventHandler } from "react";
 import Group from "./group";
 import { ButtonProps } from "./interface";
+import { IconLoading } from "../../icons";
 
-const Button = (props: ButtonProps,ref) => {
+const defaultProps: ButtonProps = {
+    htmlType: 'button',
+    type: 'default',
+    shape: 'square',
+  };
+
+const Button = (props: ButtonProps,ref: any) => {
 
     const {
         style,
@@ -25,8 +32,25 @@ const Button = (props: ButtonProps,ref) => {
         ...rest
       } = props;
     
-    return (<button>
-        
+      const loadingIcon = loading ? <IconLoading /> : icon 
+
+      const _children = <>
+        {loadingIcon}
+        {children}
+      </>
+
+      const handler: MouseEventHandler<HTMLButtonElement> = (event) => {
+        event.preventDefault()
+        onClick && onClick(event as unknown as MouseEvent)
+      }
+
+    return (<button
+        ref={ref}
+        style={style}
+        onClick={handler}
+        {...rest}
+    >
+        {_children}
     </button>)
 }
 

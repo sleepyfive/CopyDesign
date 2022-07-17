@@ -2,7 +2,7 @@ import React, { CSSProperties, HTMLProps, ReactNode } from 'react';
 
 export interface BaseButtonProps {
   style?: CSSProperties;
-  className?: string | string[];
+  className?: string;
   children?: ReactNode;
   /**
    * @zh
@@ -80,7 +80,7 @@ export interface BaseButtonProps {
    * @zh 点击按钮的回调
    * @en Callback fired when the button is clicked
    */
-  onClick?: (e: Event) => void;
+  onClick?: (e: MouseEvent) => void;
 }
 
 export type AnchorButtonProps = {
@@ -107,6 +107,6 @@ export type ButtonProps = Partial<FinalButtonProps & AnchorButtonProps>;
 
 export interface ButtonGroupProps {
   style?: CSSProperties;
-  className?: string | string[];
+  className?: string;
   children?: ReactNode;
 }
