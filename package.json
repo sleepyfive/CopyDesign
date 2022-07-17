@@ -10,6 +10,7 @@
     "icon": "cd ./src/icons/genCode && esbuild utils.ts --format=cjs > utils.js &&esbuild gen.ts --format=cjs >gen.js && node gen.js"
   },
   "dependencies": {
+    "dayjs": "^1.11.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
