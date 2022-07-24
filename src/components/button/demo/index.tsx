@@ -1,6 +1,7 @@
-import {} from 
+import React from 'react';
+import { Space, Button } from '../..'
 
-const App = () => {
+export const D0 = () => {
     return (
       <Space size='large'>
         <Button type='primary'>Primary</Button>
@@ -12,4 +13,3 @@ const App = () => {
     );
   };
   
-  export default App;
